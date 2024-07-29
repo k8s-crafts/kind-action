@@ -1,6 +1,6 @@
-# *Kind* Action
+# Kind Action
 
-[![](https://github.com/helm/kind-action/workflows/Test/badge.svg?branch=main)](https://github.com/helm/kind-action/actions)
+[![](https://github.com/k8s-crafts/kind-action/workflows/Test/badge.svg?branch=main)](https://github.com/k8s-crafts/kind-action/actions)
 
 A GitHub Action for Kubernetes IN Docker - local clusters for testing Kubernetes using [kubernetes-sigs/kind](https://kind.sigs.k8s.io/).
 
@@ -21,13 +21,13 @@ For more information on inputs, see the [API Documentation](https://developer.gi
 - `cluster_name`: The name of the cluster to create (default: `chart-testing`)
 - `wait`: The duration to wait for the control plane to become ready (default: `60s`)
 - `verbosity`: info log verbosity, higher value produces more output
-- `kubectl_version`: The kubectl version to use (default: v1.28.6)
-- `install_only`: Skips cluster creation, only install kind (default: false)
-- `ignore_failed_clean`: Whether to ignore the post delete cluster action failing (default: false)
+- `kubectl_version`: The kubectl version to use (default: `v1.28.6`)
+- `install_only`: Skips cluster creation, only install kind (default: `false`)
+- `ignore_failed_clean`: Whether to ignore the post delete cluster action failing (default: `false`)
 
 ### Example Workflow
 
-Create a workflow (eg: `.github/workflows/create-cluster.yml`):
+Create a workflow (eg: `.github/workflows/create-cluster.yaml`):
 
 ```yaml
 name: Create Cluster
@@ -39,12 +39,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create k8s Kind Cluster
-        uses: helm/kind-action@v1
+        uses: k8s-crafts/kind-action@v1
 ```
 
-This uses [@helm/kind-action](https://github.com/helm/kind-action) GitHub Action to spin up a [kind](https://kind.sigs.k8s.io/) Kubernetes cluster on every Pull Request.
-See [@helm/chart-testing-action](https://github.com/helm/chart-testing-action) for a more practical example.
+This uses [@k8s-crafts/kind-action](https://github.com/k8s-crafts/kind-action) GitHub Action to spin up a [kind](https://kind.sigs.k8s.io/) Kubernetes cluster on every Pull Request.
 
 ## Code of conduct
 
-Participation in the Helm community is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
+Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Credits
+
+This action is based on [@helm/kind-action](https://github.com/helm/kind-action), maintained by the Helm community.
