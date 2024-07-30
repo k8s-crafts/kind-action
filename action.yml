@@ -1,9 +1,9 @@
 name: "Kind Cluster"
 description: "Create a kind (Kubernetes IN Docker) cluster"
-author: "The Helm authors"
+author: "The Helm and k8s-crafts authors"
 branding:
   color: blue
-  icon: box
+  icon: cloud
 inputs:
   version:
     description: "The kind version to use (default: v0.22.0)"
